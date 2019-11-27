@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
 import 'package:flutter_rectangle/quotation_route.dart';
 import 'package:meta/meta.dart';
@@ -54,6 +55,7 @@ class Category extends StatelessWidget {
       ));
   }
 
+  
   @override
   Widget build(BuildContext context) {
     assert(debugCheckHasMaterial(context));
@@ -90,9 +92,15 @@ class Category extends StatelessWidget {
                 ),
                 // Switch(
                 //   activeColor: Colors.blue,
-                //   value: true,
+                //   value: ligado,
                 //   activeTrackColor: Colors.blue,
                 //   inactiveTrackColor: Colors.red[200],
+                //   dragStartBehavior: DragStartBehavior.start,
+                //   onChanged: (bool newValue) {
+                //     setState(() {
+                //       ligado = newValue;
+                //     });
+                //   },
                 //   // activeThumbImage: ExactAssetImage('img/Webp.net-resizeimage.png'),
                 // ),
               ],

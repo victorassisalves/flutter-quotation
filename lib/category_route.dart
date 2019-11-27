@@ -67,7 +67,7 @@ class _CategoryRouteState extends State<CategoryRoute> {
 
 
   List<Unit>_retrieveUnitsList(String categoryName) {
-    return List.generate(9, (int i) {
+    return List.generate(4, (int i) {
       i += 1;
       return Unit(
         name: '$categoryName Unit $i',
