@@ -1,19 +1,17 @@
 import 'package:meta/meta.dart';
 
-class Unit {
-  final String name;
-  final double price;
+  class Unit {
+  final String vehicleFactory;
 
-  const Unit ({
-    @required this.name,
-    @required this.price
-  }) : assert(name != null),
-       assert(price != null);
+  /// A [Unit] stores its name and conversion factor.
+  ///
+  /// An example would be 'Meter' and '1.0'.
+  const Unit({
+    @required this.vehicleFactory,
+  })  : assert(vehicleFactory != null);
 
-       /// Creates a [Unit] from a JSON object.
+  /// Creates a [Unit] from a JSON object.
   Unit.fromJson(Map jsonMap)
-      : assert(jsonMap['name'] != null),
-        assert(jsonMap['price'] != null),
-        name = jsonMap['name'],
-        price = jsonMap['price'].toDouble();
+      : assert(jsonMap['vehicleFactory'] != null),
+        vehicleFactory = jsonMap['vehicleFactory'];
 }

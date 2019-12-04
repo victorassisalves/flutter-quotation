@@ -1,16 +1,15 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'category.dart';
 import 'category_route.dart';
 
 Color _onsuranceColor = Color(0xFF02B7FF);
-
+var appBody = [MyStateFulWidget()];
 void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: CategoryRoute()
-      home: MyStateFulWidget(),
+      home: appBody[0]
+      // home: MyStateFulWidget(),
 
     ),
   );
@@ -30,7 +29,7 @@ class _MyStateFulWidgetState extends State<MyStateFulWidget> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Onsurance Quotation",
+          "Onsurance",
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
@@ -39,13 +38,21 @@ class _MyStateFulWidgetState extends State<MyStateFulWidget> {
       body: Container(
         color: Colors.black87,
         child: Center(
-          
           child: Column(
             children: <Widget>[
-              
+              RaisedButton(
+                color: Colors.lightBlue,
+                child: Text("Fazer Cotação"),
+                splashColor: Colors.blueGrey,
+                onPressed: () => {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CategoryRoute() ))
+                },
+              ),
               Center(
                 child: Row(
-                children: <Widget>[
+                  children: <Widget>[
                   Padding(
                     padding: EdgeInsets.only(left: 15.0, top: 15.0, right: 5.0, bottom: 15.0),
                     child: Icon(
@@ -90,10 +97,10 @@ class _MyStateFulWidgetState extends State<MyStateFulWidget> {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.white,
+        color: Colors.grey[600],
         child: Container(
           height: 20.0,
-          child: Center(child: Text("Meu Texto"),),
+          child: Center(child: Text("Onsurance Inc"),),
         ),
       ),
     );

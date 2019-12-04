@@ -1,4 +1,4 @@
-import 'package:flutter/gestures.dart';
+
 import "package:flutter/material.dart";
 import 'package:flutter_rectangle/quotation_route.dart';
 import 'package:meta/meta.dart';
@@ -17,7 +17,6 @@ class Category extends StatelessWidget {
   final ColorSwatch color;
   final IconData iconLocation;
   final List<Unit> units;
-  final ImageProvider activeThumbImage;
 
 
   const Category({
@@ -26,7 +25,6 @@ class Category extends StatelessWidget {
     @required this.color,
     @required this.iconLocation,
     @required this.units,
-    @required this.activeThumbImage,
   }) : assert(name != null),
        assert(color != null),
        assert(iconLocation != null),
@@ -50,6 +48,7 @@ class Category extends StatelessWidget {
               color: color,
               units: units,
             ),
+            resizeToAvoidBottomPadding: false, // This avoid resizing the screen when keypad appears
           );
         },
       ));
@@ -90,19 +89,6 @@ class Category extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline
                   ),
                 ),
-                // Switch(
-                //   activeColor: Colors.blue,
-                //   value: ligado,
-                //   activeTrackColor: Colors.blue,
-                //   inactiveTrackColor: Colors.red[200],
-                //   dragStartBehavior: DragStartBehavior.start,
-                //   onChanged: (bool newValue) {
-                //     setState(() {
-                //       ligado = newValue;
-                //     });
-                //   },
-                //   // activeThumbImage: ExactAssetImage('img/Webp.net-resizeimage.png'),
-                // ),
               ],
             ),
           ),

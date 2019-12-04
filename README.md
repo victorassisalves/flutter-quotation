@@ -1,6 +1,6 @@
 # Onsurance quotation
 
-A new fluuter projetc. This app get the quotation for onsurance products.
+A new flutter projetc. This app get the quotation for onsurance products.
 
 ## Getting Started
 

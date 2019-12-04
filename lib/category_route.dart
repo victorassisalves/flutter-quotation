@@ -14,6 +14,11 @@ class CategoryRoute extends StatefulWidget {
 class _CategoryRouteState extends State<CategoryRoute> {
   
   final categories = <Category>[];
+  static const brandColors = <ColorSwatch>[
+    ColorSwatch(0xFF02b7ff, {
+      "input": Color(0xFF02b799) 
+    })
+  ];
   
   static const _categoryNames = <String> [
     'Carro',
@@ -21,16 +26,29 @@ class _CategoryRouteState extends State<CategoryRoute> {
     'VUCs',
     'Pneus',
     'Caminhonete',
-    'Celular',
   ];
 
-   static const _baseColors = <Color>[
-    Colors.cyanAccent,
-    Colors.teal,
-    Colors.blueGrey,
-    Colors.blueAccent,
-    Colors.indigoAccent,
-    Colors.indigo,
+   static const _baseColors = <ColorSwatch>[
+    ColorSwatch(0xFF6AB7A8, {
+      'highlight': Color(0xFF6AB7A8),
+      'splash': Color(0xFF0ABC9B),
+    }),
+    ColorSwatch(0xFFFFD28E, {
+      'highlight': Color(0xFFFFD28E),
+      'splash': Color(0xFFFFA41C),
+    }),
+    ColorSwatch(0xFFFFB7DE, {
+      'highlight': Color(0xFFFFB7DE),
+      'splash': Color(0xFFF94CBF),
+    }),
+    ColorSwatch(0xFF8899A8, {
+      'highlight': Color(0xFF8899A8),
+      'splash': Color(0xFFA9CAE8),
+    }),
+    ColorSwatch(0xFFEAD37E, {
+      'highlight': Color(0xFFEAD37E),
+      'splash': Color(0xFFFFE070),
+    }),
   ];
 
   static const _icons = <IconData> [
@@ -39,7 +57,6 @@ class _CategoryRouteState extends State<CategoryRoute> {
     Icons.airport_shuttle,
     Icons.trip_origin,
     Icons.directions_transit,
-    Icons.phonelink_lock,
   ];
 
   @override
@@ -67,11 +84,15 @@ class _CategoryRouteState extends State<CategoryRoute> {
 
 
   List<Unit>_retrieveUnitsList(String categoryName) {
-    return List.generate(4, (int i) {
+    String vehicleFactory = 'nacional';
+    return List.generate(2, (int i) {
+      if (i == 1) {
+        vehicleFactory = 'importado';
+      }
       i += 1;
+
       return Unit(
-        name: '$categoryName Unit $i',
-        price: i.toDouble(),
+        vehicleFactory: vehicleFactory
       );
     });
   }
